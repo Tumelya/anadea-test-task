@@ -100,6 +100,11 @@ textarea.note-title {
     font-size: 20px;
 }
 
+.characters {
+    font-size: 13px;
+    color: gray;
+}
+
 button {
     border: none;
     border-radius: 15px;
