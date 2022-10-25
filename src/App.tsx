@@ -7,33 +7,50 @@ import {Workspace} from "./components/Workspace";
 export type NotesType = {
     id: string
     title: string
+    text: string
     date: string
 }
 
 function App() {
 
+    const date = new Date();
+
     const [notes, setNotes] = useState<Array<NotesType>>([
         {
             id: nanoid(),
             title: "First Note",
-            date: "15/10/2022"
+            text: "Some text",
+            date: date.toLocaleDateString()
         },
         {
             id: nanoid(),
             title: "Second Note",
-            date: "17/10/2022"
+            text: "Some text",
+            date: date.toLocaleDateString()
         },
         {
             id: nanoid(),
             title: "Third Note",
-            date: "21/10/2022"
+            text: "Some text",
+            date: date.toLocaleDateString()
         },
         {
             id: nanoid(),
             title: "Fourth Note",
-            date: "25/10/2022"
+            text: "Some text",
+            date: date.toLocaleDateString()
         }
     ]);
+
+    const addNote = (title: string, text: string) => {
+        const newNote = {
+            id: nanoid(),
+            title: title,
+            text: text,
+            date: date.toLocaleDateString()
+        };
+        setNotes([...notes, newNote]);
+    };
 
     return (
         <div className="App">
@@ -44,7 +61,7 @@ function App() {
                 <NotesList notes={notes}/>
             </div>
             <div className="workspace">
-                <Workspace/>
+                <Workspace handleAddNote={addNote}/>
             </div>
         </div>
     );

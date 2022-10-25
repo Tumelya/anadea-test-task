@@ -56,6 +56,7 @@ code {
 }
 
 .date {
+    padding-top: 5px;
     text-align: center;
     font-size: 13px;
 }
@@ -101,8 +102,11 @@ textarea.note-title {
 }
 
 .characters {
+    display: flex;
+    justify-content: flex-end;
     font-size: 13px;
     color: gray;
+    padding: 0px 5px 10px;
 }
 
 button {

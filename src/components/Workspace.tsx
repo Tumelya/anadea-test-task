@@ -1,6 +1,12 @@
 import {ChangeEvent, useState} from "react";
 
-export const Workspace = () => {
+type WorkspacePropsType = {
+    handleAddNote: (title: string, text: string) => void
+}
+
+export const Workspace = (props: WorkspacePropsType) => {
+
+    const date: Date = new Date();
 
     const [noteTitleText, setNoteTitleText] = useState("");
     const [noteText, setNoteText] = useState("");
@@ -19,26 +25,34 @@ export const Workspace = () => {
         }
     }
 
+    const handleSaveClick = () => {
+        if(noteTitleText.trim().length > 0) {
+            props.handleAddNote(noteTitleText, noteText);
+            setNoteTitleText("");
+            setNoteText("");
+        }
+    }
+
     return (
         <div className="workspace">
-            <div className="date">25 Dec 2022</div>
+            <div className="date">{date.toLocaleDateString()}</div>
             <div className="text-writing">
                 <textarea className="note-title"
-                          placeholder="Create a new note..."
+                          placeholder="Create new note..."
                           value={noteTitleText}
                           onChange={handleChangeTitle}></textarea>
                 <div className="characters">
-                    {titleCharacterLimit - noteTitleText.length}/{titleCharacterLimit}
+                    <span>{titleCharacterLimit - noteTitleText.length}/{titleCharacterLimit}</span>
                 </div>
                 <textarea placeholder="Write some text here..."
                           value={noteText}
                           onChange={handleChange}></textarea>
                 <div className="characters">
-                    {noteCharacterLimit - noteText.length}/{noteCharacterLimit}
+                    <span>{noteCharacterLimit - noteText.length}/{noteCharacterLimit}</span>
                 </div>
             </div>
             <div className="note-footer">
-                <button>Save</button>
+                <button onClick={handleSaveClick}>Save</button>
                 <button>Delete</button>
             </div>
         </div>

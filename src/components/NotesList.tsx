@@ -6,6 +6,7 @@ type NoteListPropsType = {
 }
 
 export const NotesList = (props: NoteListPropsType) => {
+    console.log(props.notes);
     return (
         <div className="sidebar">
             {props.notes.map((note) => (
