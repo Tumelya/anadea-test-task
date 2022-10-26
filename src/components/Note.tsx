@@ -1,3 +1,7 @@
+import React from 'react';
+import IconButton from '@mui/material/IconButton';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+
 type NoteTypeProps = {
     key: string
     id: string
@@ -11,7 +15,9 @@ export const Note = (props: NoteTypeProps) => {
             <span>{props.title}</span>
             <div className="notes-footer">
                 <small>{props.date}</small>
-                <button>Delete</button>
+                <IconButton aria-label="delete" color="primary">
+                    <DeleteOutlinedIcon fontSize="small"/>
+                </IconButton>
             </div>
         </div>
     )

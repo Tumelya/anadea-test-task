@@ -1,3 +1,7 @@
+import React from 'react';
+import SaveIcon from '@mui/icons-material/Save';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 import {ChangeEvent, useState} from "react";
 
 type WorkspacePropsType = {
@@ -26,7 +30,7 @@ export const Workspace = (props: WorkspacePropsType) => {
     }
 
     const handleSaveClick = () => {
-        if(noteTitleText.trim().length > 0) {
+        if (noteTitleText.trim().length > 0) {
             props.handleAddNote(noteTitleText, noteText);
             setNoteTitleText("");
             setNoteText("");
@@ -52,8 +56,12 @@ export const Workspace = (props: WorkspacePropsType) => {
                 </div>
             </div>
             <div className="note-footer">
-                <button onClick={handleSaveClick}>Save</button>
-                <button>Delete</button>
+                <IconButton aria-label="save" color="primary">
+                    <SaveIcon onClick={handleSaveClick}/>
+                </IconButton>
+                <IconButton aria-label="delete" color="primary">
+                    <DeleteIcon/>
+                </IconButton>
             </div>
         </div>
     )
