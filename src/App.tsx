@@ -77,13 +77,15 @@ function App() {
                 <NotesList notes={notes}
                            open={open}
                            handleModalOpen={handleModalOpen}
-                           handleModalClose={handleModalClose}/>
+                           handleModalClose={handleModalClose}
+                           deleteNote={deleteNote}/>
             </div>
             <div className="workspace">
                 <Workspace handleAddNote={addNote}
                            open={open}
                            handleModalOpen={handleModalOpen}
-                           handleModalClose={handleModalClose}/>
+                           handleModalClose={handleModalClose}
+                           deleteNote={deleteNote}/>
             </div>
         </div>
     );

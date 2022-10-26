@@ -2,11 +2,19 @@ import React from 'react';
 import Modal from '@mui/material/Modal';
 
 type ModalPropsType = {
+    id: string
     open: boolean
     handleModalClose: () => void
+    deleteNote: (noteId: string) => void
 }
 
 export const ModalWindow = (props: ModalPropsType) => {
+
+    const deleteNote = () => {
+        props.deleteNote(props.id);
+        props.handleModalClose();
+    }
+
     return (
         <div>
             <Modal
@@ -21,9 +29,12 @@ export const ModalWindow = (props: ModalPropsType) => {
                         You will not be able to restore it after.
                     </p>
                     <div className="modal-buttons">
-                        <button className="modal-delete">Delete</button>
+                        <button className="modal-delete"
+                                onClick={deleteNote}>Delete
+                        </button>
                         <button className="modal-cancel"
-                                onClick={props.handleModalClose}>Cancel</button>
+                                onClick={props.handleModalClose}>Cancel
+                        </button>
                     </div>
                 </div>
             </Modal>

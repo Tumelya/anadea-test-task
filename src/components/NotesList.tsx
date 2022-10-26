@@ -6,6 +6,7 @@ type NoteListPropsType = {
     open: boolean
     handleModalOpen: () => void
     handleModalClose: () => void
+    deleteNote: (noteId: string) => void
 }
 
 export const NotesList = (props: NoteListPropsType) => {
@@ -18,6 +19,7 @@ export const NotesList = (props: NoteListPropsType) => {
                       open={props.open}
                       handleModalOpen={props.handleModalOpen}
                       handleModalClose={props.handleModalClose}
+                      deleteNote={props.deleteNote}
                 />))}
         </div>
     )
