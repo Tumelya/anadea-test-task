@@ -1,7 +1,9 @@
 import React from 'react';
-import SaveIcon from '@mui/icons-material/Save';
 import IconButton from '@mui/material/IconButton';
+import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import ClearIcon from '@mui/icons-material/Clear';
 import {ChangeEvent, useState} from "react";
 import {ModalWindow} from "./ModalWindow";
 
@@ -33,6 +35,10 @@ export const Workspace = (props: WorkspacePropsType) => {
             setNoteText(event.target.value);
         }
     }
+    const clearAll = () => {
+        setNoteTitleText("");
+        setNoteText("");
+    }
 //Saving new notes function
     const handleSaveClick = () => {
         if (noteTitleText.trim().length > 0) {
@@ -61,6 +67,12 @@ export const Workspace = (props: WorkspacePropsType) => {
                 </div>
             </div>
             <div className="note-footer">
+                {/*<IconButton aria-label="edit" color="primary">
+                    <EditIcon onClick={()=>{}}/>
+                </IconButton>*/}
+                <IconButton aria-label="clear" color="primary">
+                    <ClearIcon onClick={clearAll}/>
+                </IconButton>
                 <IconButton aria-label="save" color="primary">
                     <SaveIcon onClick={handleSaveClick}/>
                 </IconButton>

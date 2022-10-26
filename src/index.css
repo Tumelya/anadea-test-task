@@ -30,6 +30,9 @@ code {
     background-color: rgba(178, 191, 238, 0.84);
     border: none;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .main-title {
