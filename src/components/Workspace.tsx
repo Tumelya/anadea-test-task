@@ -4,6 +4,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
+import Tooltip from '@mui/material/Tooltip';
 import {ChangeEvent, useState} from "react";
 import {ModalWindow} from "./ModalWindow";
 
@@ -67,21 +68,32 @@ export const Workspace = (props: WorkspacePropsType) => {
                 </div>
             </div>
             <div className="note-footer">
-                {/*<IconButton aria-label="edit" color="primary">
-                    <EditIcon onClick={()=>{}}/>
-                </IconButton>*/}
-                <IconButton aria-label="clear" color="primary">
-                    <ClearIcon onClick={clearAll}/>
-                </IconButton>
-                <IconButton aria-label="save" color="primary">
-                    <SaveIcon onClick={handleSaveClick}/>
-                </IconButton>
-                {/*<IconButton aria-label="delete" color="primary">
-                    <DeleteIcon onClick={props.handleModalOpen}/>
-                    <ModalWindow open={props.open}
-                                 handleModalClose={props.handleModalClose}
-                                 deleteNote={props.deleteNote}/>
-                </IconButton>*/}
+                {/*<Tooltip title="Edit" arrow>
+                    <IconButton aria-label="edit" color="primary">
+                        <EditIcon onClick={() => {
+                        }}/>
+                    </IconButton>
+                </Tooltip>*/}
+                <Tooltip title="Clear All" arrow>
+                    <IconButton aria-label="clear" color="primary">
+                        <ClearIcon onClick={clearAll}/>
+                    </IconButton>
+                </Tooltip>
+                <Tooltip title="Save" arrow>
+                    <IconButton aria-label="save" color="primary">
+                        <SaveIcon onClick={handleSaveClick}/>
+                    </IconButton>
+                </Tooltip>
+
+                {/*<Tooltip title="Delete" arrow>
+                    <IconButton aria-label="delete" color="primary">
+                        <DeleteIcon onClick={props.handleModalOpen}/>
+                        <ModalWindow open={props.open}
+                                     handleModalClose={props.handleModalClose}
+                                     deleteNote={props.deleteNote}/>
+                    </IconButton>
+                </Tooltip>*/}
+
             </div>
         </div>
     )
