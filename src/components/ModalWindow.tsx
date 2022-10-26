@@ -3,15 +3,16 @@ import Modal from '@mui/material/Modal';
 
 type ModalPropsType = {
     id: string
+    title: string
     open: boolean
     handleModalClose: () => void
-    deleteNote: (noteId: string) => void
+    deleteNote: () => void
 }
 
 export const ModalWindow = (props: ModalPropsType) => {
 
     const deleteNote = () => {
-        props.deleteNote(props.id);
+        props.deleteNote()
         props.handleModalClose();
     }
 

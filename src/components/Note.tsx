@@ -17,10 +17,6 @@ type NoteTypeProps = {
 
 export const Note = (props: NoteTypeProps) => {
 
-    /*const deleteNote = () => {
-        props.deleteNote(props.id);
-    }*/
-
     return (
         <div className="note">
             <span>{props.title}</span>
@@ -32,8 +28,8 @@ export const Note = (props: NoteTypeProps) => {
                             <DeleteOutlinedIcon fontSize="small" onClick={props.handleModalOpen}/>
                         </IconButton>
                     </Tooltip>
-                    <ModalWindow id={props.id} open={props.open} handleModalClose={props.handleModalClose}
-                                 deleteNote={props.deleteNote}/>
+                    <ModalWindow id={props.id} title={props.title} open={props.open} handleModalClose={props.handleModalClose}
+                                 deleteNote={() => props.deleteNote(props.id)}/>
                 </div>
             </div>
         </div>

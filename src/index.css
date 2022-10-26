@@ -82,7 +82,13 @@ code {
     margin: 3px;
     padding: 8px;
     border-radius: 10px;
-    background-image: url(https://img.freepik.com/premium-photo/grey-paper-high-resolution-detailed-background-texture_139635-28.jpg?w=2000);
+    background-color: rgba(213, 213, 213, 0.4);
+    /*background-image: url(https://img.freepik.com/premium-photo/grey-paper-high-resolution-detailed-background-texture_139635-28.jpg?w=2000);*/
+}
+
+.note:hover {
+    background-color: rgba(148, 148, 148, 0.4);
+    cursor: pointer;
 }
 
 .notes-footer, .note-footer {
@@ -122,6 +128,7 @@ code {
 textarea {
     border: none;
     resize: none;
+    min-height: 100px;
     padding: 10px 20px;
     background-image: url(https://img.freepik.com/premium-photo/white-texture-watercolor-paper_88281-381.jpg?w=2000);
 }
@@ -132,6 +139,7 @@ textarea:focus {
 
 textarea.note-title {
     font-size: 20px;
+    min-height: 30px;
 }
 
 .characters {
