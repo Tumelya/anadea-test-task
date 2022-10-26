@@ -31,7 +31,7 @@ function App() {
             id: nanoid(),
             title: title,
             text: text,
-            date: date.toISOString()
+            date: date.toLocaleString()
         };
         setNotes([...notes, newNote]);
     };

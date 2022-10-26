@@ -70,7 +70,7 @@ code {
 
 .sidebar {
     grid-area: sidebar;
-    background-image: url(https://img.freepik.com/premium-photo/white-texture-watercolor-paper_88281-381.jpg?w=2000);
+    background-image: url("https://i.stack.imgur.com/vjZJd.png");
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -83,7 +83,6 @@ code {
     padding: 8px;
     border-radius: 10px;
     background-color: rgba(213, 213, 213, 0.4);
-    /*background-image: url(https://img.freepik.com/premium-photo/grey-paper-high-resolution-detailed-background-texture_139635-28.jpg?w=2000);*/
 }
 
 .note:hover {
@@ -108,7 +107,7 @@ code {
 
 .workspace {
     grid-area: workspace;
-    background-image: url(https://img.freepik.com/premium-photo/white-texture-watercolor-paper_88281-381.jpg?w=2000);
+    background-image: url("https://i.stack.imgur.com/vjZJd.png");
     background-color: #f0f0f0;
     border: none;
     border-radius: 10px;
@@ -130,7 +129,10 @@ textarea {
     resize: none;
     min-height: 100px;
     padding: 10px 20px;
-    background-image: url(https://img.freepik.com/premium-photo/white-texture-watercolor-paper_88281-381.jpg?w=2000);
+    background-image: url("https://i.stack.imgur.com/vjZJd.png");
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 textarea:focus {
@@ -154,7 +156,7 @@ textarea.note-title {
 
 .modal {
     width: 400px;
-    background-image: url(https://img.freepik.com/premium-photo/white-texture-watercolor-paper_88281-381.jpg?w=2000);
+    background-image: url("https://i.stack.imgur.com/vjZJd.png");
     background-color: #d9d9d9;
     border: 2px solid #000;
     border-radius: 10px;

@@ -40,18 +40,18 @@ export const Workspace = (props: WorkspacePropsType) => {
         setNoteTitleText("");
         setNoteText("");
     }
+
 //Saving new notes function
     const handleSaveClick = () => {
         if (noteTitleText.trim().length > 0) {
             props.handleAddNote(noteTitleText, noteText);
-            setNoteTitleText("");
-            setNoteText("");
+            clearAll();
         }
     }
 
     return (
         <div className="workspace">
-            <div className="date">{date.toLocaleDateString()}</div>
+            <div className="date">{date.toLocaleString()}</div>
             <div className="text-writing">
                 <textarea className="note-title"
                           placeholder="Create new note..."
