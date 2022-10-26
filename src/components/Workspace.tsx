@@ -3,9 +3,14 @@ import SaveIcon from '@mui/icons-material/Save';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {ChangeEvent, useState} from "react";
+import {ModalWindow} from "./ModalWindow";
+//import Modal from '@mui/material/Modal';
 
 type WorkspacePropsType = {
     handleAddNote: (title: string, text: string) => void
+    open: boolean
+    handleModalOpen: () => void
+    handleModalClose: () => void
 }
 
 export const Workspace = (props: WorkspacePropsType) => {
@@ -28,7 +33,7 @@ export const Workspace = (props: WorkspacePropsType) => {
             setNoteText(event.target.value);
         }
     }
-
+//Saving new notes function
     const handleSaveClick = () => {
         if (noteTitleText.trim().length > 0) {
             props.handleAddNote(noteTitleText, noteText);
@@ -60,7 +65,27 @@ export const Workspace = (props: WorkspacePropsType) => {
                     <SaveIcon onClick={handleSaveClick}/>
                 </IconButton>
                 <IconButton aria-label="delete" color="primary">
-                    <DeleteIcon/>
+                    <DeleteIcon onClick={props.handleModalOpen}/>
+                    <ModalWindow open={props.open}
+                                 handleModalClose={props.handleModalClose}/>
+                    {/*<Modal
+                        open={open}
+                        onClose={handleModalClose}
+                        aria-labelledby="simple-modal-title"
+                        aria-describedby="simple-modal-description">
+                        <div className="modal">
+                            <h2 id="simple-modal-title">Delete confirmation</h2>
+                            <p id="simple-modal-description">
+                                Do you really want to delete this note? The note will be deleted <b>forever</b>.
+                                You will not be able to restore it after.
+                            </p>
+                            <div className="modal-buttons">
+                                <button className="modal-delete">Delete</button>
+                                <button className="modal-cancel"
+                                        onClick={handleModalClose}>Cancel</button>
+                            </div>
+                        </div>
+                    </Modal>*/}
                 </IconButton>
             </div>
         </div>

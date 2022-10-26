@@ -52,16 +52,38 @@ function App() {
         setNotes([...notes, newNote]);
     };
 
+    const deleteNote = (noteId: string) => {
+        let filteredNotes = notes.filter(note => note.id !== noteId);
+        setNotes(filteredNotes);
+    }
+
+    //Modal window for delete confirmation
+    const [open, setOpen] = React.useState(false);
+
+    const handleModalOpen = () => {
+        setOpen(true);
+    };
+
+    const handleModalClose = () => {
+        setOpen(false);
+    };
+
     return (
         <div className="App">
             <div className="toolbar">
                 <Toolbar/>
             </div>
             <div className="sidebar">
-                <NotesList notes={notes}/>
+                <NotesList notes={notes}
+                           open={open}
+                           handleModalOpen={handleModalOpen}
+                           handleModalClose={handleModalClose}/>
             </div>
             <div className="workspace">
-                <Workspace handleAddNote={addNote}/>
+                <Workspace handleAddNote={addNote}
+                           open={open}
+                           handleModalOpen={handleModalOpen}
+                           handleModalClose={handleModalClose}/>
             </div>
         </div>
     );
