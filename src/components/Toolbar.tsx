@@ -2,18 +2,23 @@ import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import Tooltip from '@mui/material/Tooltip';
+import {SearchBox} from "./SearchBox";
 
-export const Toolbar = () => {
+type ToolbarPropsType = {
+    handleSearchNote: (value: string) => void
+}
+
+export const Toolbar = (props: ToolbarPropsType) => {
     return (
         <div className="toolbar">
             <div className="main-title">Notes</div>
-            <div>
+            <div className="toolbar-icons">
                 <Tooltip title="Add new note" arrow>
                     <IconButton aria-label="add" color="primary">
-                        <AddIcon onClick={() => {
-                        }}/>
+                        <AddIcon onClick={() => {}}/>
                     </IconButton>
                 </Tooltip>
+                <SearchBox handleSearchNote={props.handleSearchNote}/>
             </div>
         </div>
     )

@@ -41,6 +41,7 @@ function App() {
             date: date.toLocaleDateString()
         }
     ]);
+    const [searchNote, setSearchNote] = useState("");
 
     const addNote = (title: string, text: string) => {
         const newNote = {
@@ -71,10 +72,11 @@ function App() {
     return (
         <div className="App">
             <div className="toolbar">
-                <Toolbar/>
+                <Toolbar handleSearchNote={setSearchNote}/>
             </div>
             <div className="sidebar">
-                <NotesList notes={notes}
+                <NotesList notes={notes.filter((note) =>
+                    note.title.toLowerCase().includes(searchNote))}
                            open={open}
                            handleModalOpen={handleModalOpen}
                            handleModalClose={handleModalClose}

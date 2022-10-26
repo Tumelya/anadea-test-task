@@ -25,6 +25,8 @@ code {
     grid-gap: 5px;
 }
 
+/*-----Toolbar-----*/
+
 .toolbar {
     grid-area: toolbar;
     background-color: rgba(178, 191, 238, 0.84);
@@ -41,6 +43,31 @@ code {
     font-weight: 50;
 }
 
+.toolbar-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: rgba(178, 191, 238, 0.6);
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.search input {
+    border: none;
+    background-color: rgba(178, 191, 238, 0.6);
+}
+
+.search input:focus {
+    outline: none;
+}
+
+/*-----Sidebar-----*/
+
 .sidebar {
     grid-area: sidebar;
     background-image: url(https://img.freepik.com/premium-photo/white-texture-watercolor-paper_88281-381.jpg?w=2000);
@@ -49,20 +76,6 @@ code {
     flex-direction: column;
     border: none;
     border-radius: 10px;
-}
-
-.workspace {
-    grid-area: workspace;
-    background-image: url(https://img.freepik.com/premium-photo/white-texture-watercolor-paper_88281-381.jpg?w=2000);
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 10px;
-}
-
-.date {
-    padding-top: 5px;
-    text-align: center;
-    font-size: 13px;
 }
 
 .note {
@@ -83,6 +96,22 @@ code {
 
 .note-footer {
     justify-content: flex-end;
+}
+
+/*-----Workspace-----*/
+
+.workspace {
+    grid-area: workspace;
+    background-image: url(https://img.freepik.com/premium-photo/white-texture-watercolor-paper_88281-381.jpg?w=2000);
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 10px;
+}
+
+.date {
+    padding-top: 5px;
+    text-align: center;
+    font-size: 13px;
 }
 
 .text-writing {
@@ -113,21 +142,7 @@ textarea.note-title {
     padding: 0px 5px 10px;
 }
 
-.modal-delete, .modal-cancel {
-    border: none;
-    border-radius: 15px;
-    margin: 0 5px;
-    padding: 7px;
-    cursor: pointer;
-}
-
-.modal-delete {
-    background-color: rgb(250, 114, 145);
-}
-
-.modal-cancel {
-    background-color: rgba(153, 255, 166, 0.78);
-}
+/*-----Modal Window-----*/
 
 .modal {
     width: 400px;
@@ -149,3 +164,21 @@ textarea.note-title {
     display: flex;
     justify-content: flex-end;
 }
+
+.modal-delete, .modal-cancel {
+    border: none;
+    border-radius: 15px;
+    margin: 0 5px;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.modal-delete {
+    background-color: rgb(250, 114, 145);
+}
+
+.modal-cancel {
+    background-color: rgba(153, 255, 166, 0.78);
+}
+
+
