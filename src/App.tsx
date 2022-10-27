@@ -3,6 +3,10 @@ import {nanoid} from "nanoid";
 import {Toolbar} from "./components/Toolbar";
 import {NotesList} from "./components/NotesList";
 import {Workspace} from "./components/Workspace";
+import {SearchBox} from "./components/SearchBox";
+import IconButton from "@mui/material/IconButton";
+import AddIcon from "@mui/icons-material/Add";
+import Tooltip from "@mui/material/Tooltip";
 
 export type NotesType = {
     id: string
@@ -47,16 +51,20 @@ function App() {
                 <Toolbar handleSearchNote={setSearchNote}/>
             </div>
             <div className="sidebar">
+                <SearchBox handleSearchNote={setSearchNote}/>
                 <NotesList notes={notes.filter((note) =>
                     note.title.toLowerCase().includes(searchNote))}
                            deleteNote={deleteNote}/>
+                <Tooltip title="Add new note" arrow>
+                    <div className="add">
+                        <IconButton aria-label="add" color="primary">
+                            <AddIcon/>
+                        </IconButton>
+                    </div>
+                </Tooltip>
             </div>
             <div className="workspace">
-                <Workspace handleAddNote={addNote}
-                           /*open={open}
-                           handleModalOpen={handleModalOpen}
-                           handleModalClose={handleModalClose}
-                           deleteNote={deleteNote}*//>
+                <Workspace handleAddNote={addNote}/>
             </div>
         </div>
     );

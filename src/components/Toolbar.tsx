@@ -12,14 +12,12 @@ export const Toolbar = (props: ToolbarPropsType) => {
     return (
         <div className="header">
             <div className="main-title">Notes</div>
-            <div className="toolbar-icons">
-                <Tooltip title="Add new note" arrow>
-                    <IconButton aria-label="add" color="primary">
-                        <AddIcon onClick={() => {}}/>
-                    </IconButton>
-                </Tooltip>
-                <SearchBox handleSearchNote={props.handleSearchNote}/>
-            </div>
+            <Tooltip title="Add new note" arrow>
+                <IconButton aria-label="add" color="primary">
+                    <AddIcon onClick={() => {
+                    }}/>
+                </IconButton>
+            </Tooltip>
         </div>
     )
 }

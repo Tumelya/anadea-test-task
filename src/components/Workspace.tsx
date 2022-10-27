@@ -1,19 +1,13 @@
 import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import SaveIcon from '@mui/icons-material/Save';
-import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
 import Tooltip from '@mui/material/Tooltip';
 import {ChangeEvent, useState} from "react";
-import {ModalWindow} from "./ModalWindow";
 
 type WorkspacePropsType = {
     handleAddNote: (title: string, text: string) => void
-    /*open: boolean
-    handleModalOpen: () => void
-    handleModalClose: () => void
-    deleteNote: (noteId: string) => void*/
 }
 
 export const Workspace = (props: WorkspacePropsType) => {
@@ -84,15 +78,6 @@ export const Workspace = (props: WorkspacePropsType) => {
                         <SaveIcon onClick={handleSaveClick}/>
                     </IconButton>
                 </Tooltip>
-
-                {/*<Tooltip title="Delete" arrow>
-                    <IconButton aria-label="delete" color="primary">
-                        <DeleteIcon onClick={props.handleModalOpen}/>
-                        <ModalWindow open={props.open}
-                                     handleModalClose={props.handleModalClose}
-                                     deleteNote={props.deleteNote}/>
-                    </IconButton>
-                </Tooltip>*/}
 
             </div>
         </div>
