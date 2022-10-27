@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/anadea-test-task/static/css/main.8375111e.css",
+    "main.js": "/anadea-test-task/static/js/main.126c1cfe.js",
+    "static/js/787.f3d34f5b.chunk.js": "/anadea-test-task/static/js/787.f3d34f5b.chunk.js",
+    "index.html": "/anadea-test-task/index.html",
+    "main.8375111e.css.map": "/anadea-test-task/static/css/main.8375111e.css.map",
+    "main.126c1cfe.js.map": "/anadea-test-task/static/js/main.126c1cfe.js.map",
+    "787.f3d34f5b.chunk.js.map": "/anadea-test-task/static/js/787.f3d34f5b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8375111e.css",
+    "static/js/main.126c1cfe.js"
+  ]
+}
