@@ -69,7 +69,8 @@ code {
 .add {
     justify-content: center;
 }
-.search:hover, .add:hover{
+
+.search:hover, .add:hover {
     background-color: rgba(150, 166, 238, 0.6);
 }
 
