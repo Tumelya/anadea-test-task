@@ -10,7 +10,7 @@ type ToolbarPropsType = {
 
 export const Toolbar = (props: ToolbarPropsType) => {
     return (
-        <div className="toolbar">
+        <div className="header">
             <div className="main-title">Notes</div>
             <div className="toolbar-icons">
                 <Tooltip title="Add new note" arrow>

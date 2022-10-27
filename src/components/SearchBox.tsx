@@ -10,7 +10,7 @@ export const SearchBox = (props: SearchBoxPropsType) => {
 
     return (
         <div className="search">
-            <IconButton aria-label="Search" color="primary">
+            <IconButton aria-label="Search" size="small" color="primary">
                 <SearchIcon/>
             </IconButton>
             <input onChange={(event) => props.handleSearchNote(event.target.value)}

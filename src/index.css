@@ -32,9 +32,13 @@ code {
     background-color: rgba(178, 191, 238, 0.84);
     border: none;
     border-radius: 10px;
+}
+
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 35px;
 }
 
 .main-title {
@@ -103,6 +107,10 @@ code {
     justify-content: flex-end;
 }
 
+.note-date {
+    color: rgb(110, 110, 110);
+}
+
 /*-----Workspace-----*/
 
 .workspace {
@@ -117,6 +125,7 @@ code {
     padding-top: 5px;
     text-align: center;
     font-size: 13px;
+    color: rgb(110, 110, 110);
 }
 
 .text-writing {

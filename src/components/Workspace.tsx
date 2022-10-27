@@ -10,10 +10,10 @@ import {ModalWindow} from "./ModalWindow";
 
 type WorkspacePropsType = {
     handleAddNote: (title: string, text: string) => void
-    open: boolean
+    /*open: boolean
     handleModalOpen: () => void
     handleModalClose: () => void
-    deleteNote: (noteId: string) => void
+    deleteNote: (noteId: string) => void*/
 }
 
 export const Workspace = (props: WorkspacePropsType) => {

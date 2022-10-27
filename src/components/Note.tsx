@@ -9,26 +9,34 @@ type NoteTypeProps = {
     id: string
     title: string
     date: string
-    open: boolean
-    handleModalOpen: () => void
-    handleModalClose: () => void
     deleteNote: (noteId: string) => void
 }
 
 export const Note = (props: NoteTypeProps) => {
 
+    //Modal window for delete confirmation
+    const [open, setOpen] = React.useState(false);
+
+    const handleModalOpen = () => {
+        setOpen(true);
+    };
+
+    const handleModalClose = () => {
+        setOpen(false);
+    };
+
     return (
         <div className="note">
             <span>{props.title}</span>
             <div className="notes-footer">
-                <small>{props.date}</small>
+                <small className="note-date">{props.date}</small>
                 <div>
                     <Tooltip title="Delete" arrow>
                         <IconButton aria-label="delete" color="primary">
-                            <DeleteOutlinedIcon fontSize="small" onClick={props.handleModalOpen}/>
+                            <DeleteOutlinedIcon fontSize="small" onClick={handleModalOpen}/>
                         </IconButton>
                     </Tooltip>
-                    <ModalWindow id={props.id} title={props.title} open={props.open} handleModalClose={props.handleModalClose}
+                    <ModalWindow id={props.id} title={props.title} open={open} handleModalClose={handleModalClose}
                                  deleteNote={() => props.deleteNote(props.id)}/>
                 </div>
             </div>
