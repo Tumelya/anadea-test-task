@@ -2,21 +2,19 @@ import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import Tooltip from '@mui/material/Tooltip';
-import {SearchBox} from "./SearchBox";
 
-type ToolbarPropsType = {
-    handleSearchNote: (value: string) => void
-}
+import {Link} from "react-router-dom";
 
-export const Toolbar = (props: ToolbarPropsType) => {
+export const Toolbar = () => {
     return (
         <div className="header">
             <div className="main-title">Notes</div>
             <Tooltip title="Add new note" arrow>
-                <IconButton aria-label="add" color="primary">
-                    <AddIcon onClick={() => {
-                    }}/>
-                </IconButton>
+                <Link to="/add">
+                    <IconButton aria-label="add" color="primary">
+                        <AddIcon/>
+                    </IconButton>
+                </Link>
             </Tooltip>
         </div>
     )

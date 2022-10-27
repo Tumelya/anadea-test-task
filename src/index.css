@@ -17,7 +17,7 @@ code {
     margin: 10px auto;
     padding: 0;
     width: 70%;
-    min-height: 50%;
+    min-height: 60%;
     display: grid;
     grid-template-areas: "toolbar toolbar" "sidebar workspace";
     grid-template-rows: 35px 1fr;
@@ -37,6 +37,7 @@ code {
 .header {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     height: 35px;
 }
@@ -205,5 +206,17 @@ textarea.note-title {
 .modal-cancel {
     background-color: rgba(153, 255, 166, 0.78);
 }
+
+/*//////*/
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover, .link:active{
+    color: rgb(53, 88, 180);
+}
+
 
 

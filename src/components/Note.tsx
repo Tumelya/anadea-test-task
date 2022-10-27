@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import IconButton from '@mui/material/IconButton';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import Tooltip from '@mui/material/Tooltip';
@@ -10,6 +10,7 @@ type NoteTypeProps = {
     title: string
     date: string
     deleteNote: (noteId: string) => void
+    setClickedNoteId: Dispatch<SetStateAction<string>>
 }
 
 export const Note = (props: NoteTypeProps) => {
@@ -27,7 +28,7 @@ export const Note = (props: NoteTypeProps) => {
 
     return (
         <div className="note">
-            <span>{props.title}</span>
+            <span onClick={() => props.setClickedNoteId(props.id)}>{props.title}</span>
             <div className="notes-footer">
                 <small className="note-date">{props.date}</small>
                 <div>

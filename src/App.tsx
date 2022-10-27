@@ -7,6 +7,8 @@ import {SearchBox} from "./components/SearchBox";
 import IconButton from "@mui/material/IconButton";
 import AddIcon from "@mui/icons-material/Add";
 import Tooltip from "@mui/material/Tooltip";
+import {Route, Routes, Link} from "react-router-dom";
+import {EditNote} from "./components/EditNote";
 
 export type NotesType = {
     id: string
@@ -19,16 +21,17 @@ function App() {
 
     const date = new Date();
     const notesAsAString = localStorage.getItem("notes-data");
-    let startNotes = []
+    let startNotes = [];
     if (notesAsAString) {
         startNotes = JSON.parse(notesAsAString);
     }
     const [notes, setNotes] = useState<Array<NotesType>>(startNotes);
     const [searchNote, setSearchNote] = useState("");
+    const [clickedNoteId, setClickedNoteId] = useState<string>('');
 
     useEffect(() => {
         localStorage.setItem("notes-data", JSON.stringify(notes))
-    }, [notes])
+    }, [notes]);
 
     const addNote = (title: string, text: string) => {
         const newNote = {
@@ -43,28 +46,37 @@ function App() {
     const deleteNote = (noteId: string) => {
         let filteredNotes = notes.filter(note => note.id !== noteId);
         setNotes(filteredNotes);
-    }
+    };
 
     return (
         <div className="App">
             <div className="toolbar">
-                <Toolbar handleSearchNote={setSearchNote}/>
+                <Toolbar/>
             </div>
             <div className="sidebar">
                 <SearchBox handleSearchNote={setSearchNote}/>
                 <NotesList notes={notes.filter((note) =>
                     note.title.toLowerCase().includes(searchNote))}
-                           deleteNote={deleteNote}/>
+                           deleteNote={deleteNote} setClickedNoteId={setClickedNoteId}/>
                 <Tooltip title="Add new note" arrow>
                     <div className="add">
-                        <IconButton aria-label="add" color="primary">
-                            <AddIcon/>
-                        </IconButton>
+                        <Link className="link" to="/add">
+                            <IconButton aria-label="add" color="primary">
+                                <AddIcon/>
+                            </IconButton>
+                        </Link>
                     </div>
                 </Tooltip>
             </div>
             <div className="workspace">
-                <Workspace handleAddNote={addNote}/>
+                <Routes>
+                    <Route path="/add" element={<Workspace handleAddNote={addNote}/>}/>
+                    <Route path="/edit" element={<EditNote clickedNote={notes.filter(n => n.id === clickedNoteId)[0]}/>}>
+                        <Route path="/edit/:id" element={<EditNote clickedNote={notes.filter(n => n.id === clickedNoteId)[0]}/>}></Route>
+                    </Route>
+                    <Route path="*" element={<Workspace handleAddNote={addNote}/>}/>
+                </Routes>
+                {/*<Workspace handleAddNote={addNote}/>*/}
             </div>
         </div>
     );
